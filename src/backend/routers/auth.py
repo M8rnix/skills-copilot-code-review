@@ -2,10 +2,20 @@
 Authentication endpoints for the High School Management System API
 """
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from typing import Dict, Any
 
 from ..database import teachers_collection, verify_password
+
+def get_current_user(username: str = None):
+    # In een echte app zou je JWT of session cookies gebruiken
+    # Hier simuleren we authenticatie via query param of header
+    if not username:
+        raise HTTPException(status_code=401, detail="Authentication required")
+    teacher = teachers_collection.find_one({"_id": username})
+    if not teacher:
+        raise HTTPException(status_code=404, detail="Teacher not found")
+    return teacher
 
 router = APIRouter(
     prefix="/auth",

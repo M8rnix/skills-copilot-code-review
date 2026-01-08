@@ -12,9 +12,7 @@
     />
   </head>
   <body>
-    <div class="announcement-banner">
-  📢 Activity registration is open until the end of the month. Don't miss your spot!
-  </div>
+    <div id="announcement-banner" class="announcement-banner hidden"></div>
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
@@ -29,7 +27,37 @@
             <button id="logout-button">Logout</button>
           </div>
         </div>
+        <button id="manage-announcements-btn" class="icon-button hidden" title="Aankondigingen beheren">
+          <span class="announcement-icon">📢</span>
+        </button>
       </div>
+        <!-- Announcements Modal -->
+        <div id="announcements-modal" class="modal hidden">
+          <div class="modal-content">
+            <span class="close-announcements-modal">&times;</span>
+            <h3>Aankondigingen beheren</h3>
+            <div id="announcements-list"></div>
+            <button id="add-announcement-btn" class="primary-btn">Nieuwe aankondiging</button>
+            <form id="announcement-form" class="hidden">
+              <div class="form-group">
+                <label for="announcement-message">Bericht:</label>
+                <input type="text" id="announcement-message" required />
+              </div>
+              <div class="form-group">
+                <label for="announcement-expiration">Verloopdatum:</label>
+                <input type="date" id="announcement-expiration" required />
+              </div>
+              <div class="form-group">
+                <label for="announcement-start">Startdatum (optioneel):</label>
+                <input type="date" id="announcement-start" />
+              </div>
+              <input type="hidden" id="announcement-id" />
+              <button type="submit" class="primary-btn">Opslaan</button>
+              <button type="button" id="cancel-announcement-btn" class="secondary-btn">Annuleren</button>
+            </form>
+            <div id="announcements-message" class="hidden message"></div>
+          </div>
+        </div>
     </header>
 
     <main>

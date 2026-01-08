@@ -1,3 +1,129 @@
+/* Announcements Banner */
+#announcement-banner {
+  background: linear-gradient(90deg, #ffe082 0%, #fffde7 100%);
+  color: #333;
+  font-size: 1.1rem;
+  padding: 0.75em 1.5em;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: 500;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  margin-left: 0.5em;
+  padding: 0.3em 0.6em;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.icon-button:hover {
+  background: #f5f5f5;
+}
+
+/* Announcements Modal */
+#announcements-modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#announcements-modal .modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2em 2.5em;
+  min-width: 350px;
+  max-width: 95vw;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  position: relative;
+}
+.close-announcements-modal {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #888;
+}
+.announcement-item {
+  background: #f9fbe7;
+  border-radius: 8px;
+  padding: 1em;
+  margin-bottom: 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.announcement-message {
+  font-weight: 500;
+  font-size: 1.05em;
+}
+.announcement-dates {
+  font-size: 0.95em;
+  color: #666;
+  display: flex;
+  gap: 1.5em;
+}
+.edit-announcement-btn, .delete-announcement-btn {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 0.3em 0.8em;
+  margin-right: 0.5em;
+  cursor: pointer;
+  font-size: 0.98em;
+  transition: background 0.2s, border 0.2s;
+}
+.edit-announcement-btn:hover {
+  background: #e3f2fd;
+  border-color: #90caf9;
+}
+.delete-announcement-btn:hover {
+  background: #ffebee;
+  border-color: #ef9a9a;
+}
+.primary-btn {
+  background: #ffd54f;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5em 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  transition: background 0.2s;
+}
+.primary-btn:hover {
+  background: #ffe082;
+}
+.secondary-btn {
+  background: #f5f5f5;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5em 1.2em;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 0.5em;
+  transition: background 0.2s;
+}
+.secondary-btn:hover {
+  background: #e0e0e0;
+}
 /* Color palette */
 :root {
   /* Primary colors */
